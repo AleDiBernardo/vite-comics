@@ -32,6 +32,7 @@ export default {
         "DC Universe",
         "DC Power Visa",
       ],
+      link_icons: ["twitter", "facebook", "youtube", "pinterest", "location"],
     };
   },
 };
@@ -91,7 +92,16 @@ export default {
     </div>
 
     <div class="footerBottom">
-      <div class="container">s</div>
+      <div class="container">
+        <a href="#">Sign Up Now!</a>
+        <div class="socials">
+          <a href="#">follow us</a>
+
+          <ul>
+            <li v-for="icon in link_icons">{{ icon }}</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
@@ -116,47 +126,79 @@ footer {
         .col {
           padding: 0.5rem;
           // background-color: lightcoral;
-  
+
           span {
             text-transform: uppercase;
           }
-  
+
           li {
             list-style: none;
             font-size: 15px;
             padding: 5px;
-  
+
             a {
               text-decoration: none;
               color: $footer-text-color;
-  
+
               &:hover {
                 color: $primary-color;
               }
             }
           }
-  
+
           .dc-comics {
             margin-bottom: 20px;
           }
+        }
       }
-      }
-      img{
-        
+      img {
         width: 35%;
         margin: 0 auto;
         position: absolute;
         right: 0px;
         top: -40px;
-        
       }
     }
   }
   .footerBottom {
-    background-color: lightblue;
-    height: 80px;
+    background-color: $footer-color;
+    font-weight: bold;
+
+    // height: 80px;
     position: relative;
     z-index: 1;
+    font-size: 20px;
+    .container {
+      @include flex(row, space-between, center);
+
+      a {
+        padding: 15px 20px;
+        border: 3px solid $primary-color;
+        text-decoration: none;
+        color: inherit;
+        text-transform: uppercase;
+      }
+
+      li {
+        list-style: none;
+      }
+      .socials {
+        @include flex(row, center, center);
+
+        a {
+          padding: 15px 20px;
+          border: none;
+          text-decoration: none;
+          color: $primary-color;
+          text-transform: uppercase;
+        }
+
+        ul {
+          @include flex(row, center, center);
+          gap: 10px;
+        }
+      }
+    }
   }
 }
 </style>

@@ -55,6 +55,8 @@ export default {
 
 #icons-ctn {
   background-color: $primary-color;
+  position: relative;
+  z-index: 1;
 
   .container {
     padding: 4rem;
