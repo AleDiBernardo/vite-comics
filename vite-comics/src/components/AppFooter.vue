@@ -98,6 +98,7 @@ export default {
           <a href="#">follow us</a>
 
           <ul>
+            <!-- TODO: add icons -->
             <li v-for="icon in link_icons">{{ icon }}</li>
           </ul>
         </div>
