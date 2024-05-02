@@ -1,12 +1,15 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
+import AppIcons from "./components/AppIcons.vue";
+
 
 
 export default{
     components: {
       AppHeader,
-      AppMain
+      AppMain,
+      AppIcons
     },
     data(){
       return{
@@ -20,6 +23,7 @@ export default{
 <template>
     <AppHeader/>
     <AppMain/>
+    <AppIcons/>
 </template>
 
 <style lang="scss">
@@ -27,12 +31,13 @@ export default{
 body {
   background-color: lightcoral;
   color: white;
+  font-family: monospace;
 }
 
 .container {
   width: 70%;
   margin: 0 auto;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 
 }
 
