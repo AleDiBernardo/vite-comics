@@ -1,9 +1,12 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
+
 
 export default{
     components: {
-      AppHeader
+      AppHeader,
+      AppMain
     },
     data(){
       return{
@@ -16,6 +19,7 @@ export default{
 
 <template>
     <AppHeader/>
+    <AppMain/>
 </template>
 
 <style lang="scss">
@@ -26,7 +30,10 @@ body {
 }
 
 .container {
-  width: 70%
+  width: 70%;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+
 }
 
 </style>

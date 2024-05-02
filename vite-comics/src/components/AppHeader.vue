@@ -76,8 +76,6 @@ header {
   // Mixin Flex
   @include flex(row, space-between, center);
 
-  margin: 0 auto;
-  padding: 1.5rem 0;
 
   ul {
     @include flex(row, space-between, center);
