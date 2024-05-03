@@ -116,6 +116,7 @@ footer {
     background-image: url("../assets/img/footer-bg.jpg");
 
     .container {
+
       @include flex(row, flex-start, flex-start);
       gap: 10px;
       font-size: 18px;
@@ -167,10 +168,12 @@ footer {
 
     // height: 80px;
     position: relative;
+    height: 100%;
     z-index: 1;
     font-size: 20px;
     .container {
       @include flex(row, space-between, center);
+      
 
       a {
         padding: 15px 20px;

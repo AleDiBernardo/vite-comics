@@ -2,6 +2,7 @@
 export default {
   data() {
     return {
+      counter: 0,
       menuLinks: [
         {
           title: "characters",
@@ -46,16 +47,29 @@ export default {
       ],
     };
   },
+  methods: {
+    checkActive: function (index) {
+      this.menuLinks[this.counter].isActive = false;
+      this.counter = index;
+      this.menuLinks[this.counter].isActive = true;
+    },
+  },
 };
 </script>
 
 <template>
   <header>
     <div class="container">
-      <img src="../assets/img/dc-logo.png" alt="" />
+      <a href="#">
+        <img src="../assets/img/dc-logo.png" alt="" id="logo" />
+      </a>
       <ul>
-        <li v-for="link in menuLinks">
-          <a href="#" :class="{active: link.isActive}">
+        <li
+          v-for="(link, index) in menuLinks"
+          :class="{ active: link.isActive }"
+          @click="checkActive(index)"
+        >
+          <a href="#">
             {{ link.title.toUpperCase() }}
           </a>
         </li>
@@ -70,39 +84,45 @@ export default {
 
 header {
   background-color: $header-color;
-}
+  height: 100px;
 
-.container {
-  // Mixin Flex
-  @include flex(row, space-between, center);
-
-
-  ul {
+  .container {
+    // Mixin Flex
+    padding: 0;
     @include flex(row, space-between, center);
-    gap: 2rem;
-    list-style: none;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 1rem;
+    height: 100%;
 
-    li{
-        a{
-            text-decoration: none;
-            color: $header-text-color;
-
-            &:hover{
-                color: $primary-color;
-            }
-
-            &.active{
-                border-bottom: 4px;
-                border-color: $primary-color; 
-            }
-        }
-
-
+    #logo {
+      max-width: 80%;
     }
 
+    ul {
+      @include flex(row, space-between, center);
+      gap: 2rem;
+      list-style: none;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 1rem;
+      height: 100%;
+
+      li {
+        @include flex(row, space-between, center);
+
+        height: 100%;
+
+        &.active {
+          border-bottom: 3px solid blue;
+          border-color: $primary-color;
+          a {
+            color: $primary-color;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: $header-text-color;
+        }
+      }
+    }
   }
 }
 </style>
