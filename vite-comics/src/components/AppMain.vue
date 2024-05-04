@@ -1,9 +1,9 @@
 <script>
-import { cardsArray } from '../assets/data/cards';
-import AppCard from './AppCard.vue'
+import { cardsArray } from "../assets/data/cards";
+import AppCard from "./AppCard.vue";
 export default {
   components: {
-    AppCard
+    AppCard,
   },
   data() {
     return {
@@ -16,13 +16,14 @@ export default {
 <template>
   <main>
     <div class="container">
-      <h1>I Nostri Prodotti</h1>
+      <h1>Current Series</h1>
 
       <div class="row">
         <div class="col" v-for="card in cards">
-          <AppCard 
+          <AppCard
             :cardURL="card.thumb"
             :cardSeries="card.series"
+            :cardType="card.type"
           />
         </div>
       </div>
@@ -36,21 +37,27 @@ export default {
 
 main {
   background-color: $main-color;
-  padding: 60px 0;
+  padding: 80px 0;
+  position: relative;
 
   .container {
-
     h1 {
-      font-size: 35px;
-      margin-bottom: 30px
+      font-size: 30px;
+      margin-bottom: 30px;
+      padding: 20px;
+      position: absolute;
+      top: 0px;
+      background-color: $primary-color;
+      text-transform: uppercase;
     }
-  
+
     .row {
       @include flex(row, space-between, stretch, wrap);
-  
+
+      gap: 20px;
       .col {
-        width: calc(100% / 6);
-        margin-bottom: 1rem;
+        width: calc(100% / 6 - 20px);
+        // margin-bottom: 1rem;
       }
     }
   }

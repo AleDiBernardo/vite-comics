@@ -10,7 +10,10 @@ export default {
 </script>
 
 <template>
-  <div class="card" :class="cardType">
+  <div
+    class="card"
+    :class="cardType === 'comic book' ? 'comicBook' : 'graphicNovel'"
+  >
     <img :src="cardURL" :alt="cardSeries" />
     <h4>{{ cardSeries }}</h4>
   </div>
@@ -21,14 +24,34 @@ export default {
 @use "./style/partials/mixins" as *;
 
 .card {
-  //   background-color: white;
+  @include flex(row, center, center, wrap);
   padding: 0.5rem;
   text-align: center;
-  width: 200px;
+  gap: 10px;
+  cursor: pointer;
+
+  &.comicBook {
+    border: 2px solid lightblue;
+  }
+
+  &.graphicNovel {
+    border: 2px solid lightcoral;
+  }
+
+  &:hover {
+    border-width: 4px;
+  }
 
   img {
     max-width: 100%;
     aspect-ratio: 1;
+    position: relative;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    
   }
 }
 </style>
