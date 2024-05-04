@@ -112,6 +112,7 @@ export default {
 @use "./style/partials/mixins" as *;
 
 footer {
+  
   .footerTop {
     background-image: url("../assets/img/footer-bg.jpg");
 

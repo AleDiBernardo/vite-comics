@@ -10,12 +10,13 @@ export default {
 </script>
 
 <template>
+  
   <div
     class="card"
     :class="cardType === 'comic book' ? 'comicBook' : 'graphicNovel'"
   >
     <img :src="cardURL" :alt="cardSeries" />
-    <h4>{{ cardSeries }}</h4>
+    <a href="#"><h4>{{ cardSeries }}</h4></a>
   </div>
 </template>
 
@@ -47,11 +48,14 @@ export default {
     aspect-ratio: 1;
     position: relative;
   }
-
-  h4 {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    
+  a{
+    text-decoration: none;
+    color: inherit;
+    h4 {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      
+    }
   }
 }
 </style>

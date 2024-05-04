@@ -42,11 +42,13 @@ main {
 
   .container {
     h1 {
+      position: absolute;
+      top: -30px;
       font-size: 30px;
       margin-bottom: 30px;
       padding: 20px;
       position: absolute;
-      top: 0px;
+      // top: 0px;
       background-color: $primary-color;
       text-transform: uppercase;
     }
