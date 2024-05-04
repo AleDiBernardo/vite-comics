@@ -27,6 +27,7 @@ export default {
           />
         </div>
       </div>
+      <input type="button" value="Load More">
     </div>
   </main>
 </template>
@@ -41,6 +42,7 @@ main {
   position: relative;
 
   .container {
+    text-align: center;
     h1 {
       position: absolute;
       top: -30px;
@@ -62,6 +64,8 @@ main {
         // margin-bottom: 1rem;
       }
     }
+
+    
   }
 }
 </style>

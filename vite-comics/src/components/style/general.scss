@@ -25,3 +25,21 @@ body {
   padding: 1rem 0;
 
 }
+
+input{
+  padding: 20px;
+  background: $primary-color;
+  font-size: 20px;
+  color: inherit;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 30px;
+  cursor: pointer;
+  &:hover {
+  background: none;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+
+  }
+}

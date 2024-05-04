@@ -32,7 +32,7 @@ export default {
         "DC Universe",
         "DC Power Visa",
       ],
-      link_icons: ["twitter", "facebook", "youtube", "pinterest", "location"],
+      link_icons: ["fa-brands fa-twitter", "fa-brands fa-facebook", "fa-brands fa-youtube", "fa-brands fa-pinterest", "fa-solid fa-location"],
     };
   },
 };
@@ -87,7 +87,8 @@ export default {
           </div>
         </div>
 
-        <img src="../assets/img/dc-logo-bg.png" alt="" />
+        <div class="logo"></div>
+        <!-- <img src="../assets/img/dc-logo-bg.png" alt="" /> -->
       </div>
     </div>
 
@@ -99,7 +100,11 @@ export default {
 
           <ul>
             <!-- TODO: add icons -->
-            <li v-for="icon in link_icons">{{ icon }}</li>
+            <li v-for="icon in link_icons">
+              <a href="#">
+                <i :class="icon"></i>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -112,16 +117,25 @@ export default {
 @use "./style/partials/mixins" as *;
 
 footer {
-  
   .footerTop {
     background-image: url("../assets/img/footer-bg.jpg");
 
     .container {
-
-      @include flex(row, flex-start, flex-start);
+      @include flex(row, space-between, flex-start);
       gap: 10px;
       font-size: 18px;
       position: relative;
+
+      .logo {
+        width: 500px;
+        aspect-ratio: 1;
+        position: absolute;
+        top: -50px;
+        right: 80px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("../assets/img/dc-logo-bg.png");
+      }
 
       .col-container {
         @include flex(row, space-between, flex-start);
@@ -154,13 +168,6 @@ footer {
           }
         }
       }
-      img {
-        width: 35%;
-        margin: 0 auto;
-        position: absolute;
-        right: 0px;
-        top: -40px;
-      }
     }
   }
   .footerBottom {
@@ -174,7 +181,6 @@ footer {
     font-size: 20px;
     .container {
       @include flex(row, space-between, center);
-      
 
       a {
         padding: 15px 20px;
@@ -196,11 +202,23 @@ footer {
           text-decoration: none;
           color: $primary-color;
           text-transform: uppercase;
+          &:hover{
+            color: inherit
+          }
         }
 
         ul {
           @include flex(row, center, center);
           gap: 10px;
+
+          li{
+            a{
+              color: inherit;
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
         }
       }
     }

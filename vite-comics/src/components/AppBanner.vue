@@ -17,7 +17,7 @@ export default {
 @use "./style/partials/mixins" as *;
 
 .banner {
-    height: 400px;
+    height: 500px;
     background-image: url('../assets/img/banner.avif');
     background-size: cover;
     background-repeat: no-repeat;
