@@ -27,20 +27,24 @@ export default {
 .card {
   @include flex(row, center, center, wrap);
   padding: 0.5rem;
+  // min-height: 200px;
+  // max-height: 300px;
   text-align: center;
   gap: 10px;
   cursor: pointer;
 
   &.comicBook {
-    border: 2px solid lightblue;
+    border: 2px solid red;
   }
 
   &.graphicNovel {
-    border: 2px solid lightcoral;
+    border: 2px solid yellow;
   }
 
   &:hover {
-    border-width: 4px;
+    // border-width: 4px;
+    background-color: lightyellow;
+    color: black;
   }
 
   img {
