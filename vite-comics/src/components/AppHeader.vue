@@ -118,7 +118,6 @@ header {
           }
         }
         a {
-          text-decoration: none;
           color: $header-text-color;
         }
       }

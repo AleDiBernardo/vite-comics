@@ -185,9 +185,15 @@ footer {
       a {
         padding: 15px 20px;
         border: 3px solid $primary-color;
-        text-decoration: none;
-        color: inherit;
+        
         text-transform: uppercase;
+
+        &:hover{
+        border: 3px solid white;
+        color: $primary-color;
+
+
+        }
       }
 
       li {

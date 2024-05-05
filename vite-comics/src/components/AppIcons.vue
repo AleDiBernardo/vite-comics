@@ -39,10 +39,12 @@ export default {
     <div class="container">
       <ul>
         <li v-for="icon in icons">
+          <a href="#">
             <div>
                 <img :src="getImagePath(icon.image)" alt="" />
             </div>
           <span>{{ icon.text.toUpperCase()}}</span>
+          </a>
         </li>
       </ul>
     </div>
@@ -57,14 +59,19 @@ export default {
   background-color: $primary-color;
   position: relative;
   z-index: 1;
+  min-height: 220px;
 
   .container {
     padding: 4rem;
     ul {
       @include flex(row, space-between, center);
       li {
-        @include flex(row, space-between, center);
+        a{
 
+          @include flex(row, space-between, center);
+          
+          
+        }
         list-style: none;
         span{
             font-size: 15px;
@@ -76,6 +83,11 @@ export default {
         &:last-child{
             width: 15%;
         }
+
+        &:hover{
+          border-bottom: 2px solid white;
+        }
+
       }
     }
   }

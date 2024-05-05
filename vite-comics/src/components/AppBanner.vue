@@ -13,8 +13,6 @@ export default {
 
 </template>
 <style scoped lang="scss">
-@use "./style/partials/variables" as *;
-@use "./style/partials/mixins" as *;
 
 .banner {
     height: 500px;

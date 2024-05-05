@@ -40,6 +40,7 @@ main {
   background-color: $main-color;
   padding: 80px 0;
   position: relative;
+  min-height: 820px;
 
   .container {
     text-align: center;

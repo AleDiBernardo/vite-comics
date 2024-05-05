@@ -21,14 +21,11 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@use "./style/partials/variables" as *;
 @use "./style/partials/mixins" as *;
 
 .card {
   @include flex(row, center, center, wrap);
   padding: 0.5rem;
-  // min-height: 200px;
-  // max-height: 300px;
   text-align: center;
   gap: 10px;
   cursor: pointer;
