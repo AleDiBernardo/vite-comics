@@ -21,9 +21,7 @@ export default {
       <div class="row">
         <div class="col" v-for="card in cards">
           <AppCard
-            :cardURL="card.thumb"
-            :cardSeries="card.series"
-            :cardType="card.type"
+            :cardObj="card"
           />
         </div>
       </div>

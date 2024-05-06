@@ -1,10 +1,8 @@
 <script>
 export default {
   props: {
-    cardURL: String,
-    cardPrice: String,
-    cardSeries: String,
-    cardType: String,
+
+    cardObj: Object
   },
 };
 </script>
@@ -13,10 +11,10 @@ export default {
   
   <div
     class="card"
-    :class="cardType === 'comic book' ? 'comicBook' : 'graphicNovel'"
+    :class="cardObj.type === 'comic book' ? 'comicBook' : 'graphicNovel'"
   >
-    <img :src="cardURL" :alt="cardSeries" />
-    <a href="#"><h4>{{ cardSeries }}</h4></a>
+    <img :src="cardObj.thumb" :alt="cardObj.series" />
+    <a href="#"><h4>{{ cardObj.series }}</h4></a>
   </div>
 </template>
 

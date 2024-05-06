@@ -18,7 +18,7 @@ export default{
     },
     data(){
       return{
-        // bannerImage: "../assets/img/banner.jpeg"
+        // bannerImage: "banner.avif"
       }
     }
 }
